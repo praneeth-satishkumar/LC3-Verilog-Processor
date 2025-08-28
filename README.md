@@ -43,19 +43,19 @@ Designed and tested using a clock-divided architecture, the processor includes a
 ---
 
 ## 📁 Modules Breakdown
-| **Module**	| **Function** |
-|---||---|
-| top.v	| Connects all modules together |
-| pc.v	| Program counter with reset and write-enable |
-| instr_mem.v	| Instruction memory (preloaded with sample program) |
-| regfile.v	8 | registers for data storage |
-| alu.v	| Arithmetic/logic unit with ADD, AND, NOT, PASS |
-| data_mem.v	| Memory used for load/store instructions |
-| cc_logic.v	| Computes N/Z/P flags based on ALU result |
-| muxes.v	| Multiplexers for PC source, ALU input, and register writeback |
-| sign_extender.v	| Sign-extends immediate values |
-| control_unit.v	| Finite state machine (FSM) handling decode and control signals |
-| clock_divider.v	| Generates a slower clock for simulation |
+| **Module**         | **Function**                                                       |
+|--------------------|---------------------------------------------------------------------|
+| `top.v`            | Connects all modules together                                       |
+| `pc.v`             | Program counter with reset and write-enable                         |
+| `instr_mem.v`      | Instruction memory (preloaded with sample program)                 |
+| `regfile.v`        | 8 registers for data storage                                        |
+| `alu.v`            | Arithmetic/logic unit with ADD, AND, NOT, PASS                      |
+| `data_mem.v`       | Memory used for load/store instructions                             |
+| `cc_logic.v`       | Computes N/Z/P flags based on ALU result                            |
+| `muxes.v`          | Multiplexers for PC source, ALU input, and register writeback       |
+| `sign_extender.v`  | Sign-extends immediate values                                       |
+| `control_unit.v`   | Finite state machine (FSM) handling decode and control signals      |
+| `clock_divider.v`  | Generates a slower clock for simulation                             |
 
 ---
 
