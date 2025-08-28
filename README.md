@@ -76,9 +76,9 @@ Open in your simulator of choice and set top.v as the top module.
 
 Initialize a simulation:
 
--Observe instruction execution via waveform viewer
--Watch register values (regfile.v) and condition flags (cc_logic.v)
--Reset signal initializes the PC to x3000 and starts fetching instructions from instr_mem.
+- Observe instruction execution via waveform viewer
+- Watch register values (regfile.v) and condition flags (cc_logic.v)
+- Reset signal initializes the PC to x3000 and starts fetching instructions from instr_mem.
 
 ---
 
@@ -103,20 +103,20 @@ memory_array[16'h300D] = 16'h000A;  // NEWVAL: .FILL #10
 
 ## 🔧 Design Notes
 
--Program Counter (PC) starts at x3000
--Instructions and data values are loaded directly in instr_mem.v and data_mem.v
--FSM ensures proper sequencing of FETCH → DECODE → EXECUTE
--Control signals reset after each instruction to prevent incorrect carryover
--Muxes handle routing of ALU input, register input, and PC source
+- Program Counter (PC) starts at x3000
+- Instructions and data values are loaded directly in instr_mem.v and data_mem.v
+- FSM ensures proper sequencing of FETCH → DECODE → EXECUTE
+- Control signals reset after each instruction to prevent incorrect carryover
+- Muxes handle routing of ALU input, register input, and PC source
 
 ---
 
 ## 📌 Future Enhancements
 
--Full LC-3 instruction set (JSR, JSRR, LDR, STR, LDI, STI, etc.)
--Microcode-based control design
--Assembly to binary instruction parser
--VGA or 7-segment output for visual debugging
+- Full LC-3 instruction set (JSR, JSRR, LDR, STR, LDI, STI, etc.)
+- Microcode-based control design
+- Assembly to binary instruction parser
+- VGA or 7-segment output for visual debugging
 
 ---
 
