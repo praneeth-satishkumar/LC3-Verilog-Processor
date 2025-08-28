@@ -48,21 +48,13 @@ always@ (posedge clk) begin
     end else begin
         case(state)
             FETCH: begin
-                cc_write <= 0;
-                reg_write_en <= 0;
-                imm_flag <= 0;
-                mem_read <= 0;
-                mem_write <= 0;
-                mem_to_reg <= 0;
-                reg_dst <= 3'bXXX;
-                alu_op <= 3'bXXX;
                 pc_sel <= pc_1;
                 pc_write <= 0;
-                oppcode <= instr[15:12];
                 state <= DECODE;
             end
 
             DECODE: begin
+                oppcode <= instr[15:12];
                 case(oppcode)
                     4'b0001, 4'b0101: begin // ADD, AND
                         alu_op <= (IR[15:12] == 4'b0001) ? ADD : AND;
@@ -189,6 +181,14 @@ always@ (posedge clk) begin
                         mem_write <= 1;
                     end
                 endcase
+                cc_write <= 0;
+                reg_write_en <= 0;
+                imm_flag <= 0;
+                mem_read <= 0;
+                mem_write <= 0;
+                mem_to_reg <= 0;
+                reg_dst <= 3'bXXX;
+                alu_op <= 3'bXXX;
                 state <= FETCH;
             end
         endcase

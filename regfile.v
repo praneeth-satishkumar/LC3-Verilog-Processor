@@ -33,9 +33,8 @@ module regfile(
     
     always@ (posedge clk) begin
 
-        if (reg_write_en) begin
+        if (reg_write_en)
             $display("Writing %h to R%d", write_data, DR); 
             registers[DR] <= write_data;
-        end
     end
 endmodule
