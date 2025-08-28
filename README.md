@@ -44,6 +44,7 @@ Designed and tested using a clock-divided architecture, the processor includes a
 
 ## 📁 Modules Breakdown
 | **Module**	| **Function** |
+|---||---|
 | top.v	| Connects all modules together |
 | pc.v	| Program counter with reset and write-enable |
 | instr_mem.v	| Instruction memory (preloaded with sample program) |
